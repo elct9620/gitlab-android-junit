@@ -4,7 +4,7 @@ MAINTAINER 蒼時弦也 docker@frost.tw
 ENV ANDROID_SDK_VERSION r24.4.1
 ENV ANDROID_SDK_SOURCE https://dl.google.com/android/android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
 
-RUN  apk add --update  curl ca-certificates bash alpine-sdk \
+RUN  apk add --update  curl ca-certificates bash alpine-sdk zlib-dev libstdc++ \
   && mkdir -p /opt
 
 RUN curl -L ${ANDROID_SDK_SOURCE} | tar zxv -C /opt

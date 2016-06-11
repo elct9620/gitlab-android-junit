@@ -5,8 +5,9 @@ ENV ANDROID_SDK_VERSION r24.4.1
 ENV ANDROID_SDK_SOURCE https://dl.google.com/android/android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
 
 RUN  apk add --update  curl ca-certificates bash \
-  && mkdir -p /opt \
-  && curl -L ${ANDROID_SDK_SOURCE} | tar zxv -C /opt
+  && mkdir -p /opt
+
+RUN curl -L ${ANDROID_SDK_SOURCE} | tar zxv -C /opt
 
 ENV ANDROID_HOME /opt/android-sdk-linux
 

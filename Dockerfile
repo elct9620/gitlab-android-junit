@@ -25,3 +25,9 @@ RUN  echo "y" | android update sdk -u -a --filter android-23 \
   && echo "y" | android update sdk -u -a --filter build-tools-23.0.2 \
   && echo "y" | android update sdk -u -a --filter build-tools-23.0.1 \
   && echo "y" | android update sdk -u -a --filter build-tools-23.0.0
+
+RUN  mkdir ~/.gradle \
+	&& echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties \
+	&& echo "org.gradle.jvmargs=-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" >> ~/.gradle/gradle.properties \
+	&& echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties \
+	&& echo "org.gradle.configureondemand=true" >> ~/.gradle/gradle.properties \

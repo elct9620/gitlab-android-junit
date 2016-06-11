@@ -6,8 +6,7 @@ ENV ANDROID_SDK_SOURCE https://dl.google.com/android/android-sdk_${ANDROID_SDK_V
 
 RUN  apk add --update  curl ca-certificates bash \
   && mkdir -p /opt \
-  && curl -L ${ANDROID_SDK_SOURCE} | tar zxv -C /opt \
-  && apk del curl ca-certificates bash
+  && curl -L ${ANDROID_SDK_SOURCE} | tar zxv -C /opt
 
 ENV ANDROID_HOME /opt/android-sdk-linux
 

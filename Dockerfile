@@ -4,7 +4,8 @@ MAINTAINER 蒼時弦也 docker@frost.tw
 ENV ANDROID_SDK_VERSION r24.4.1
 ENV ANDROID_SDK_SOURCE https://dl.google.com/android/android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
 
-RUN  apt-get install -y ca-certificates lib32stdc++6 lib32z1 lib32z1-dev \
+RUN  apt-get update \
+  && apt-get install -y ca-certificates lib32stdc++6 lib32z1 lib32z1-dev \
   && mkdir -p /opt
 
 RUN curl -L ${ANDROID_SDK_SOURCE} | tar zxv -C /opt
